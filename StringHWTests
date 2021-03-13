@@ -1,0 +1,156 @@
+package com.company;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class StringHWTests {
+    @Test
+    public void test_positiveInt_intToString () {
+        String actual = StringHW.intToString(563897);
+        String expected = "563897";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_negativeInt_intToString () {
+        String actual = StringHW.intToString(-456456452);
+        String expected = "-456456452";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_zero_intToString () {
+        String actual = StringHW.intToString(0);
+        String expected = "0";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_positiveDouble_doubleToString () {
+        String actual = StringHW.doubleToString(3.14);
+        String expected = "3.14";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_negativeDouble_doubleToString () {
+        String actual = StringHW.doubleToString(-55.9);
+        String expected = "-55.9";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_doubleWithD_doubleToString () {
+        String actual = StringHW.doubleToString(345.800);
+        String expected = "345.8";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_positiveInt_stringToNumber () {
+        int actual = StringHW.stringToNumber("12345");
+        int expected = 12345;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_negativeInt_stringToNumber () {
+        int actual = StringHW.stringToNumber("-65470906");
+        int expected = -65470906;
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void test_positiveDouble_stringToRealNumber () {
+        double actual = StringHW.stringToRealNumber("14.6");
+        double expected = 14.6;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_negativeDouble_stringToRealNumber () {
+        double actual = StringHW.stringToRealNumber("-0.675");
+        double expected = -0.675;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_doubleWithD_stringToRealNumber () {
+        double actual = StringHW.stringToRealNumber("14.9D");
+        double expected = 14.9;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_3words_getLengthOfShortestWord  () {
+        int actual = StringHW.getLengthOfShortestWord ("i love you");
+        int expected = 1;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_punctuation_getLengthOfShortestWord  () {
+        int actual = StringHW.getLengthOfShortestWord ("live not paradise");
+        int expected = 3;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_4DifferentCaseWords_getLengthOfShortestWord  () {
+        int actual = StringHW.getLengthOfShortestWord ("impossible tell the truth");
+        int expected = 3;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_4Words_changeSymbols  () {
+        String [] array = {"мир", "дружба", "жвачка", "ура"};
+        String [] actual = StringHW.changeSymbols (array, 6 );
+        String [] expected = {"мир", "дру$$$", "жва$$$", "ура"};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void test_addSpaceAfterPunctuation () {
+        String actual = StringHW.addSpaceAfterPunctuation("здравствуй,милая, привет!рад видеть");
+        String expected = "здравствуй, милая, привет! рад видеть";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_onlyUniqueSymbols () {
+        String actual = StringHW.onlyUniqueSymbols("солнышко вышло");
+        String expected = "солнышк в";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_7words_quantityOfWords  () {
+        int actual = StringHW.quantityOfWords ("let's go to the bar for a drink");
+        int expected = 8;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_deletePart () {
+        String actual = StringHW.deletePart("американский футбол", 3, 6);
+        String expected = "амекий футбол";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_stringReverse () {
+        String actual = StringHW.stringReverse("стадион динамо");
+        String expected = "оманид ноидатс";
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_deleteLastWord () {
+        String actual = StringHW.deleteLastWord("hello, dear friends");
+        String expected = "hello, dear";
+        Assertions.assertEquals(expected, actual);
+    }
+}
+
